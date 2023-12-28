@@ -9,7 +9,7 @@ def lambda_handler(event, context):
     sqsMessageBody['messageDescription'] = event['messageDescription']
     sqsClient = boto3.client('sqs')
     message = sqsClient.send_message(
-        QueueUrl='https://sqs.us-east-1.amazonaws.com/837868820500/video-000120-queue',
+        QueueUrl='<Your-Queue-URL>',
         MessageBody=json.dumps(sqsMessageBody)
     )
 
